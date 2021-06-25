@@ -31,8 +31,8 @@ app.use(express.urlencoded({
     extended: false
 }));
 
-// const PORT = process.env.PORT || 7883;
-const PORT = 7883;
+const PORT = process.env.PORT || 7883;
+// const PORT = 7883;
 
 async function talkToCura(url, key) {
 
