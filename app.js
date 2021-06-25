@@ -31,7 +31,7 @@ app.use(express.urlencoded({
     extended: false
 }));
 
-const PORT = process.env.PORT || 7883;
+const dvcPort = process.env.PORT || 3000;
 // const PORT = 7883;
 
 async function talkToCura(url, key) {
@@ -93,6 +93,6 @@ app.post('/dvc/cura-get/', async function(req, res) {
 
 });
 
-app.listen(PORT, function() {
-    console.log(`Server started on port ${PORT}`);
+app.listen(dvcPort, function() {
+    console.log(`Server started on port ${dvcPort}`);
 });
