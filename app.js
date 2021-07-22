@@ -20,10 +20,10 @@ const axios = require('axios');
 // const WP_URL = 'http://teamsuisse.local/wp-json/teamsuisse/cura/details';
 
 //staging
-const WP_URL = 'https://afc-team-suisse.ch/wp-json/teamsuisse/cura/details';
+// const WP_URL = 'https://afc-team-suisse.ch/wp-json/teamsuisse/cura/details';
 
 //production
-// const WP_URL = 'https://teamsuisse.ch/wp-json/teamsuisse/cura/details';
+const WP_URL = 'https://teamsuisse.ch/wp-json/teamsuisse/cura/details';
 
 const app = express();
 app.use(express.json());
@@ -82,14 +82,14 @@ app.post('/dvc/cura-get/', async function(req, res) {
      * Make request to CURA and wait for respond
      */
     const details = await talkToCura(url, req.body.key);
-    // console.log(details.members[memberID]);
+    console.log(details.members[memberID]);
 
     /**
      * When data from CURA is received send it back
      * to wordpress using REST API
      */
     const sendToWordpress = await talkToWP(wpUserID, details.members[memberID], req.body.key);
-    // console.log(sendToWordpress);
+    console.log(sendToWordpress);
 
 });
 
