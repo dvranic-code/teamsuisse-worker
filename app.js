@@ -20,10 +20,10 @@ const axios = require('axios');
 // const WP_URL = 'http://teamsuisse.local/wp-json/teamsuisse/cura/details';
 
 //staging
-// const WP_URL = 'https://afc-team-suisse.ch/wp-json/teamsuisse/cura/details';
+const WP_URL = 'https://afc-team-suisse.ch/wp-json/teamsuisse/cura/details';
 
 //production
-const WP_URL = 'https://teamsuisse.ch/wp-json/teamsuisse/cura/details';
+// const WP_URL = 'https://teamsuisse.ch/wp-json/teamsuisse/cura/details';
 
 const app = express();
 app.use(express.json());
@@ -94,5 +94,5 @@ app.post('/dvc/cura-get/', async function(req, res) {
 });
 
 app.listen(dvcPort, function() {
-    console.log(`Server started on port ${dvcPort}`);
+    // console.log(`Server started on port ${dvcPort}`);
 });
